@@ -1,0 +1,47 @@
+# ~/.tmuxinator/example.yml
+
+name: example
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t prueba
+
+windows:
+  - bash:
+      layout: 2536,147x40,0,0[147x13,0,0,4,147x26,0,14,5]
+      panes:
+        - 
+        - date
+  - axa:
+      layout: e79e,147x40,0,0{78x40,0,0,6,68x40,79,0[68x13,79,0,10,68x13,79,14,12,68x12,79,28,13]}
+      panes:
+        - cd ~/Documents ; ls
+        - cd ~/Downloads ; ls
+        - cd ~/Pictures ; ls
+        - cd ~/Videos ; ls
+  - musica:
+      layout: 9e81,147x40,0,0[147x20,0,0,14,147x19,0,21,15]
+      panes:
+        - env
+        - lsb_release -a
